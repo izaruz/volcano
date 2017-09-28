@@ -1,0 +1,37 @@
+---
+title: "Presentation & Plotly"
+author: "IsaacVillatoro"
+date: "September 28, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Instructions
+
+Create a web page presentation using R Markdown that features a plot created with Plotly. Host your webpage on either GitHub Pages, RPubs, or NeoCities. Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. We would love to see you show off your creativity!
+
+## Loading library and variables
+
+```{r}
+library(plotly)
+
+x <- seq_len(nrow(volcano)) + 100
+y <- seq_len(ncol(volcano)) + 500
+
+```
+
+## 3D plot
+
+In scatter traces, we saw how to make 3D scatter plots and 3D paths/lines, but plotly.js also supports 3D surface and triangular mesh surfaces (aka trisurf plots).
+
+```{r}
+plot_ly() %>% add_surface(x = ~x, y = ~y, z = ~volcano)
+```
+
+
+*https://plotly-book.cpsievert.me/other-3d-plots.html*
+
+*Figure: A 3D surface of volcano height.*
