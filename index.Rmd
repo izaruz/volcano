@@ -15,23 +15,25 @@ Create a web page presentation using R Markdown that features a plot created wit
 
 ## Loading library and variables
 
-```{r}
+```{r, echo=TRUE}
 library(plotly)
-
-x <- seq_len(nrow(volcano)) + 100
-y <- seq_len(ncol(volcano)) + 500
-
 ```
 
-## 3D plot
+## Histogram
 
-In scatter traces, we saw how to make 3D scatter plots and 3D paths/lines, but plotly.js also supports 3D surface and triangular mesh surfaces (aka trisurf plots).
+A histogram is an accurate graphical representation of the distribution of numerical data. It is an estimate of the probability distribution of a continuous variable (quantitative variable) and was first introduced by Karl Pearson. It is a kind of bar graph.
+
+```{r echo=TRUE, eval=FALSE}
+graph1=plot_ly(x = rnorm(700), type = "histogram")
+graph1
+```
+
+*Reference: en.wikipedia.org/wiki/Histogram*
+
+## Plot
 
 ```{r}
-plot_ly() %>% add_surface(x = ~x, y = ~y, z = ~volcano)
+graph1=plot_ly(x = rnorm(700), type = "histogram")
+graph1
 ```
 
-
-*https://plotly-book.cpsievert.me/other-3d-plots.html*
-
-*Figure: A 3D surface of volcano height.*
